@@ -1,0 +1,22 @@
+{
+  "name": "steamapp",
+  "version": "1.0.0",
+  "description": "teaching with block code",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kivi16/STEAM-FAIR-Project.git"
+  },
+  "keywords": [
+    "tech"
+  ],
+  "author": "Owen Garland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kivi16/STEAM-FAIR-Project/issues"
+  },
+  "homepage": "https://github.com/kivi16/STEAM-FAIR-Project#readme"
+}
