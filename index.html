@@ -8,6 +8,47 @@
     <script src="msg/js/en.js"></script>
     <script src="index.js"></script>
     <link rel="stylesheet" href="index.css">
+    <script>
+      Blockly.Blocks['string_length'] = {
+  init: function() {
+    this.appendValueInput('VALUE')
+        .setCheck('String')
+        .appendField('length of');
+    this.setOutput(true, 'Number');
+    this.setColour(160);
+    this.setTooltip('Returns number of letters in the provided text.');
+    this.setHelpUrl('http://www.w3schools.com/jsref/jsref_length_string.asp');
+  }
+}
+
+Blockly.JavaScript['text_length'] = function(block) {
+  // String or array length.
+  var argument0 = Blockly.JavaScript.valueToCode(block, 'VALUE',
+      Blockly.JavaScript.ORDER_FUNCTION_CALL) || '\'\'';
+  return [argument0 + '.length', Blockly.JavaScript.ORDER_MEMBER];
+};
+  </script>
+    <script>
+    Blockly.Blocks['bodyblock_type'] = {
+      init: function() {
+        this.appendStatementInput("STRING")
+        .setCheck(null)
+        .appendField("Body Shape")
+        .appendField(new Blockly.FieldDropdown([["Small","sm_body"], ["Medium","sm_body"], ["Large","sm_body"]]), "body_shapes");
+    this.setColour(135);
+ this.setTooltip("");
+ this.setHelpUrl("");
+ Blockly.JavaScript['bodyblock_type'] = function(block) {
+  var dropdown_body_shapes = block.getFieldValue('body_shapes');
+  var statements_string = Blockly.JavaScript.statementToCode(block, 'STRING');
+  // TODO: Assemble JavaScript into code variable.
+  var code = Blockly.JavaScript.valueToCode(block, 'STRING',
+        Blockly.JavaScript.ORDER_FUNCTION_CALL)|| '\'\'';
+  return [code +'type', Blockly.JavaScript.ORDER_MEMBER];
+};
+  }
+};
+  </script>
    
 </head>
 <header>
@@ -20,6 +61,11 @@
     <block type="math_arithmetic"></block>
     <block type="text"></block>
     <block type="text_print"></block> 
+
+    </category>
+    <category name="Text">
+      <block type="string_length"></block>
+      <block type="bodyblock_type"></block>
     </category>
 
 </xml> 
@@ -36,19 +82,13 @@
 
 </html>
 
-<!--
- <script>
-        Blockly.Blocks['string_length'] = {
-    init: function() {
-      this.appendValueInput('VALUE')
-          .setCheck('String')
-          .appendField('length of');
-      this.setOutput(true, 'Number');
-      this.setColour(160);
-      this.setTooltip('Returns number of letters in the provided text.');
-      this.setHelpUrl('http://www.w3schools.com/jsref/jsref_length_string.asp');
-    }
-  }
+
+
+
+
+
+          <!--
+  
   Blockly.defineBlocksWithJsonArray([
     // Block for colour picker.
     {
@@ -77,16 +117,5 @@
       "tooltip": "%{BKY_COLOUR_RANDOM_TOOLTIP}"
     }
   ]);
-  Blockly.JavaScript['text_length'] = function(block) {
-    // String or array length.
-    var argument0 = Blockly.JavaScript.valueToCode(block, 'VALUE',
-        Blockly.JavaScript.ORDER_FUNCTION_CALL) || '\'\'';
-    return [argument0 + '.length', Blockly.JavaScript.ORDER_MEMBER];
-  };
-    </script>
-    goes into tool box
-        <category name="Text">
-        <block type="string_length"></block>
-      </category>
---> 
+    -->
 
