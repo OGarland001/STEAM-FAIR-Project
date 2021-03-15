@@ -29,6 +29,7 @@ Blockly.JavaScript['text_length'] = function(block) {
 };
   </script>
     <script>
+      //Body type block
     Blockly.Blocks['bodyblock_type'] = {
       init: function() {
         this.appendStatementInput("STRING")
@@ -48,7 +49,47 @@ Blockly.JavaScript['text_length'] = function(block) {
 };
   }
 };
+
+//boy/girl block
+Blockly.Blocks['bgenderblock_type'] = {
+  init: function() {
+    this.appendStatementInput("Boy Alien")
+        .setCheck(null)
+        .appendField("Boy Alien");
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['bgenderblock_type'] = function(block) {
+  var statements_boy_alien = Blockly.JavaScript.statementToCode(block, 'Boy Alien');
+  // TODO: Assemble JavaScript into code variable.
+  var code = Blockly.JavaScript.valueToCode(block, 'Boy Alien',
+    Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
+  return code [code + 'type', Blockly.JavaScript.ORDER_MEMBER];
+};
+
+//girl block
+Blockly.Blocks['ggenderblock_type'] = {
+  init: function() {
+    this.appendStatementInput("Girl Alien")
+        .setCheck(null)
+        .appendField("Girl Alien");
+    this.setColour(290);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['ggenderblock_type'] = function(block) {
+  var statements_girl_alien = Blockly.JavaScript.statementToCode(block, 'Girl Alien');
+  // TODO: Assemble JavaScript into code variable.
+  var code = Blockly.JavaScript.valueToCode(block, 'Girl Alien',
+    Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
+  return code[code + 'type', Blockly.JavaScript.ORDER_MEMBER];
+};
+
   </script>
+   
    
 </head>
 <header>
@@ -63,9 +104,11 @@ Blockly.JavaScript['text_length'] = function(block) {
     <block type="text_print"></block> 
 
     </category>
-    <category name="Text">
+    <category name="My Blocks">
       <block type="string_length"></block>
       <block type="bodyblock_type"></block>
+      <block type="bgenderblock_type"></block>
+      <block type="ggenderblock_type"></block>
     </category>
 
 </xml> 
@@ -87,35 +130,5 @@ Blockly.JavaScript['text_length'] = function(block) {
 
 
 
-          <!--
-  
-  Blockly.defineBlocksWithJsonArray([
-    // Block for colour picker.
-    {
-      "type": "colour_picker",
-      "message0": "%1",
-      "args0": [
-        {
-          "type": "field_colour",
-          "name": "COLOUR",
-          "colour": "#ff0000"
-        }
-      ],
-      "output": "Colour",
-      "helpUrl": "%{BKY_COLOUR_PICKER_HELPURL}",
-      "style": "colour_blocks",
-      "tooltip": "%{BKY_COLOUR_PICKER_TOOLTIP}",
-      "extensions": ["parent_tooltip_when_inline"]
-    },
-    // Block for random colour.
-    {
-      "type": "colour_random",
-      "message0": "%{BKY_COLOUR_RANDOM_TITLE}",
-      "output": "Colour",
-      "helpUrl": "%{BKY_COLOUR_RANDOM_HELPURL}",
-      "style": "colour_blocks",
-      "tooltip": "%{BKY_COLOUR_RANDOM_TOOLTIP}"
-    }
-  ]);
-    -->
+
 
