@@ -29,26 +29,7 @@ Blockly.JavaScript['text_length'] = function(block) {
 };
   </script>
     <script>
-      //Body type block
-    Blockly.Blocks['bodyblock_type'] = {
-      init: function() {
-        this.appendStatementInput("STRING")
-        .setCheck(null)
-        .appendField("Body Shape")
-        .appendField(new Blockly.FieldDropdown([["Small","sm_body"], ["Medium","sm_body"], ["Large","sm_body"]]), "body_shapes");
-    this.setColour(135);
- this.setTooltip("");
- this.setHelpUrl("");
- Blockly.JavaScript['bodyblock_type'] = function(block) {
-  var dropdown_body_shapes = block.getFieldValue('body_shapes');
-  var statements_string = Blockly.JavaScript.statementToCode(block, 'STRING');
-  // TODO: Assemble JavaScript into code variable.
-  var code = Blockly.JavaScript.valueToCode(block, 'STRING',
-        Blockly.JavaScript.ORDER_FUNCTION_CALL)|| '\'\'';
-  return [code +'type', Blockly.JavaScript.ORDER_MEMBER];
-};
-  }
-};
+    
 
 //boy/girl block
 Blockly.Blocks['bgenderblock_type'] = {
@@ -87,52 +68,117 @@ Blockly.JavaScript['ggenderblock_type'] = function(block) {
     Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
   return code[code + 'type', Blockly.JavaScript.ORDER_MEMBER];
 };
-Blockly.Themes.Halloween = Blockly.Theme.defineTheme('theme_dark', {
-  'base': Blockly.Themes.Classic,
-    'componentStyles': {
-      'workspaceBackgroundColour': '#1e1e1e',
-      'toolboxBackgroundColour': 'blackBackground',
-      'toolboxForegroundColour': '#fff',
-      'flyoutBackgroundColour': '#252526',
-      'flyoutForegroundColour': '#ccc',
-      'flyoutOpacity': 1,
-      'scrollbarColour': '#797979',
-      'insertionMarkerColour': '#fff',
-      'insertionMarkerOpacity': 0.3,
-      'scrollbarOpacity': 0.4,
-      'cursorColour': '#d0d0d0',
-      'blackBackground': '#333',
+
+// Body Colour Block
+Blockly.Blocks['blockbodycolour_type'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Body Colour")
+        .appendField(new Blockly.FieldColour("#ffffff"), "colour_block");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(135);
+ this.setTooltip("");
+ this.setHelpUrl("");
   }
-});
-function start() {
-    // Create main workspace.
-    workspace = Blockly.inject('blocklyDiv',
-      {
-        toolbox: toolboxCategories,
-        theme: Blockly.Themes.Halloween,
-      });
- } 
+};
+Blockly.JavaScript['blockbodycolour_type'] = function(block) {
+  var colour_colour_block = block.getFieldValue('colour_block');
+  // TODO: Assemble JavaScript into code variable.
+  var code = Blockly.JavaScript.valueToCode(block, 'colour_block',
+    Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
+  return code[code + 'type', Blockly.JavaScript.ORDER_MEMBER];
+};
+//Head shape block
+Blockly.Blocks['blockheadshape_type'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Head Shape")
+        .appendField(new Blockly.FieldDropdown([["Round Head","round_headoption"], ["Square Head","square_headoption"], ["Triangle Head","triangle_headoption"]]), "alien_headshape");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['blockheadshape_type'] = function(block) {
+  var dropdown_alien_headshape = block.getFieldValue('alien_headshape');
+  // TODO: Assemble JavaScript into code variable.
+  var code = Blockly.JavaScript.valueToCode(block, 'alien_headshape',
+    Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
+  return code[code + 'type', Blockly.JavaScript.ORDER_MEMBER];
+};
+//eye colour block
+Blockly.Blocks['eyecolourblock_type'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Eye Colour")
+        .appendField(new Blockly.FieldColour("#ff0000"), "eye_colour");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['eyecolourblock_type'] = function(block) {
+  var colour_eye_colour = block.getFieldValue('eye_colour');
+  // TODO: Assemble JavaScript into code variable.
+  var code = Blockly.JavaScript.valueToCode(block, 'eye_colour',
+    Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
+  return code[code + 'type', Blockly.JavaScript.ORDER_MEMBER];
+
+}
+//hair block type
+Blockly.Blocks['hairblock_type'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Hair Style")
+        .appendField(new Blockly.FieldDropdown([["Crazy","crazy_style"], ["Long","long_style"], ["Short","short_style"]]), "Hair_Style")
+        .appendField("Hair Colour")
+        .appendField(new Blockly.FieldColour("#ff0000"), "hair_colour");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['hairblock_type'] = function(block) {
+  var dropdown_hair_style = block.getFieldValue('Hair_Style');
+  var colour_hair_colour = block.getFieldValue('hair_colour');
+  // TODO: Assemble JavaScript into code variable.
+  var code = Blockly.JavaScript.valueToCode(block, 'Hair_Style',"hair_colour",
+    Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
+  return code[code + 'type', Blockly.JavaScript.ORDER_MEMBER];
+};
+//
   </script>
    
    
 </head>
 <header>
  <xml id="toolbox" style="display: none">
-    <category name="standard">
-    <block type="controls_if"></block>
-    <block type="controls_repeat_ext"></block>
-    <block type="logic_compare"></block>
-    <block type="math_number"></block>
-    <block type="math_arithmetic"></block>
-    <block type="text"></block>
-    <block type="text_print"></block> 
-
-    </category>
-    <category name="My Blocks">
-      <block type="string_length"></block>
-      <block type="bodyblock_type"></block>
+    <category name="Boy Or Girl">
       <block type="bgenderblock_type"></block>
       <block type="ggenderblock_type"></block>
+    </category>
+    <category name="Body Colour">
+      <block type="blockbodycolour_type"></block>
+    </category>
+    <category name="Head">
+      <block type="blockheadshape_type"></block>
+      <block type="eyecolourblock_type"></block>
+      <block type="hairblock_type"></block>
+    </category>
+    <category name="Torso">
+    </category>
+    <category name="Legs">
+    </category>
+    <category name="Feet">
     </category>
 
 </xml> 
@@ -148,3 +194,28 @@ function start() {
   </script>
 
 </html>
+
+<!--
+
+    //Body type block
+    Blockly.Blocks['bodyblock_type'] = {
+      init: function() {
+        this.appendStatementInput("STRING")
+        .setCheck(null)
+        .appendField("Body Shape")
+        .appendField(new Blockly.FieldDropdown([["Small","sm_body"], ["Medium","sm_body"], ["Large","sm_body"]]), "body_shapes");
+    this.setColour(135);
+ this.setTooltip("");
+ this.setHelpUrl("");
+ Blockly.JavaScript['bodyblock_type'] = function(block) {
+  var dropdown_body_shapes = block.getFieldValue('body_shapes');
+  var statements_string = Blockly.JavaScript.statementToCode(block, 'STRING');
+  // TODO: Assemble JavaScript into code variable.
+  var code = Blockly.JavaScript.valueToCode(block, 'STRING',
+        Blockly.JavaScript.ORDER_FUNCTION_CALL)|| '\'\'';
+  return [code +'type', Blockly.JavaScript.ORDER_MEMBER];
+};
+  }
+};
+
+-->
