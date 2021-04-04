@@ -7,6 +7,7 @@
     <script src="blocks_compressed.js"></script>
     <script src="msg/js/en.js"></script>
     <script src="index.js"></script>
+    <script src="custom_generator.js"></script>
     <link rel="stylesheet" href="index.css">
     <script>
       Blockly.Blocks['string_length'] = {
@@ -31,24 +32,7 @@ Blockly.JavaScript['text_length'] = function(block) {
     <script>
     
 
-//boy/girl block
-Blockly.Blocks['bgenderblock_type'] = {
-  init: function() {
-    this.appendStatementInput("Boy Alien")
-        .setCheck(null)
-        .appendField("Boy Alien");
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-Blockly.JavaScript['bgenderblock_type'] = function(block) {
-  var statements_boy_alien = Blockly.JavaScript.statementToCode(block, 'Boy Alien');
-  // TODO: Assemble JavaScript into code variable.
-  var code = Blockly.JavaScript.valueToCode(block, 'Boy Alien',
-    Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
-  return code [code + 'type', Blockly.JavaScript.ORDER_MEMBER];
-};
+
 
 //girl block
 Blockly.Blocks['ggenderblock_type'] = {
@@ -140,7 +124,7 @@ Blockly.Blocks['hairblock_type'] = {
         .appendField(new Blockly.FieldDropdown([["Crazy","crazy_style"], ["Long","long_style"], ["Short","short_style"]]), "Hair_Style")
         .appendField("Hair Colour")
         .appendField(new Blockly.FieldColour("#ff0000"), "hair_colour");
-    this.setPreviousStatement(true, null);
+    this.setPreviousStatement(true, null);  
     this.setNextStatement(true, null);
     this.setColour(180);
  this.setTooltip("");
@@ -155,7 +139,26 @@ Blockly.JavaScript['hairblock_type'] = function(block) {
     Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
   return code[code + 'type', Blockly.JavaScript.ORDER_MEMBER];
 };
-//
+//Shoe Block
+Blockly.Blocks['shoeblock_type'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Shoes")
+        .appendField(new Blockly.FieldDropdown([["Sandals","Sandals_shoe"], ["Running Shoes","running_shoe"], ["Boots","boots_shoe"]]), "shoeoption_block");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(345);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['shoeblock_type'] = function(block) {
+  var dropdown_shoeoption_block = block.getFieldValue('shoeoption_block');
+  // TODO: Assemble JavaScript into code variable.
+  var code = Blockly.JavaScript.valueToCode(block, 'shoeoption_block',
+    Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
+  return code[code + 'type', Blockly.JavaScript.ORDER_MEMBER];
+};
   </script>
    
    
@@ -174,20 +177,56 @@ Blockly.JavaScript['hairblock_type'] = function(block) {
       <block type="eyecolourblock_type"></block>
       <block type="hairblock_type"></block>
     </category>
-    <category name="Torso">
-    </category>
-    <category name="Legs">
-    </category>
     <category name="Feet">
+      <block type="shoeblock_type"></block>
+      <block type="object"/>
+      <block type="member"></block>
     </category>
-
+  
 </xml> 
 
 </header>
 <body>
-<div id="blocklyDiv" style="height: 500px; width: 50%;"></div>
+  <button onclick="runCode()">Run JavaScript</button>
+<div id="blocklyDiv" style="height: 500px; width: 50%; float: left;"></div>
 </body>
+<div id="Aliengen" style="height: 500px; width: 50%; float: left; background-color: blue;"></div>
+<script>
+  //boy block
+Blockly.Blocks['bgenderblock_type'] = {
+  init: function() {
+    this.appendStatementInput("Boy Alien")
+        .setCheck(null)
+        .appendField("Boy Alien");
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['bgenderblock_type'] = function(block) {
+  var statements_boy_alien = Blockly.JavaScript.statementToCode(block, 'Boy Alien');
+  // TODO: Assemble JavaScript into code variable.
+  var code = document.createElement("img");
+  code.setAttribute("src","shrek.jpg");
+  code.setAttribute("height", "768");
+  code.setAttribute("width", "500");
+  code.setAttribute("alt", "shrekboi");
+  document.getElementById("Aliengen").appendChild("code");
+  return code;
+};
 
+  function runCode() {
+    window.LoopTrap = 1000;
+    Blockly.JavaScript.INFINITE_LOOP_TRAP = 'if (--window.LoopTrap==0) throw "infinite loop.";\n';
+    var butt = Blockly.JavaScript.workspaceToCode(Aliengen);
+    Blockly.JavaScript.INFINITE_LOOP_TRAP= null;
+    try{
+      eval(butt);
+    } catch(e){
+      alert(e);
+    }
+  }
+</script>
 <script>
     var workspace = Blockly.inject('blocklyDiv',
         {toolbox: document.getElementById('toolbox')});
