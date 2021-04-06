@@ -184,49 +184,15 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
     </category>
   
 </xml> 
-
+<button onclick="runCode()">Run JavaScript</button>
 </header>
 <body>
-  <button onclick="runCode()">Run JavaScript</button>
+
 <div id="blocklyDiv" style="height: 500px; width: 50%; float: left;"></div>
 </body>
-<div id="Aliengen" style="height: 500px; width: 50%; float: left; background-color: blue;"></div>
-<script>
-  //boy block
-Blockly.Blocks['bgenderblock_type'] = {
-  init: function() {
-    this.appendStatementInput("Boy Alien")
-        .setCheck(null)
-        .appendField("Boy Alien");
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-Blockly.JavaScript['bgenderblock_type'] = function(block) {
-  var statements_boy_alien = Blockly.JavaScript.statementToCode(block, 'Boy Alien');
-  // TODO: Assemble JavaScript into code variable.
-  var code = document.createElement("img");
-  code.setAttribute("src","shrek.jpg");
-  code.setAttribute("height", "768");
-  code.setAttribute("width", "500");
-  code.setAttribute("alt", "shrekboi");
-  document.getElementById("Aliengen").appendChild("code");
-  return code;
-};
+<div id="Aliengen" style="height: 500px; width: 450px; float: left; background-color: blue;"></div>
+<script src="index.js"> boyblock(); </script>
 
-  function runCode() {
-    window.LoopTrap = 1000;
-    Blockly.JavaScript.INFINITE_LOOP_TRAP = 'if (--window.LoopTrap==0) throw "infinite loop.";\n';
-    var butt = Blockly.JavaScript.workspaceToCode(Aliengen);
-    Blockly.JavaScript.INFINITE_LOOP_TRAP= null;
-    try{
-      eval(butt);
-    } catch(e){
-      alert(e);
-    }
-  }
-</script>
 <script>
     var workspace = Blockly.inject('blocklyDiv',
         {toolbox: document.getElementById('toolbox')});
