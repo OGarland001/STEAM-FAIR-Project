@@ -75,27 +75,7 @@ Blockly.JavaScript['blockheadshape_type'] = function(block) {
     Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
   return code[code + 'type', Blockly.JavaScript.ORDER_MEMBER];
 };
-//eye colour block
-Blockly.Blocks['eyecolourblock_type'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Eye Colour")
-        .appendField(new Blockly.FieldColour("#ff0000"), "eye_colour");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-Blockly.JavaScript['eyecolourblock_type'] = function(block) {
-  var colour_eye_colour = block.getFieldValue('eye_colour');
-  // TODO: Assemble JavaScript into code variable.
-  var code = Blockly.JavaScript.valueToCode(block, 'eye_colour',
-    Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
-  return code[code + 'type', Blockly.JavaScript.ORDER_MEMBER];
 
-}
 //hair block type
 Blockly.Blocks['hairblock_type'] = {
   init: function() {
@@ -174,7 +154,7 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
 </body>
 <div id="Aliengen" style="height: 500px; width: 450px; float: left; position: relative; z-index: -2;">
  
-  <div id="AlienHead" class="bodyparts">
+  <div id="AlienHead">
     
    <div id="LEYE">
     <div id="eyeglint"></div>
@@ -186,15 +166,15 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
      <img id="smile" src="unnamed.png">
    </div>
     <div id="AlienLear">
-      <div id="Learball" class="bodyparts"></div>
+      <div id="Learball"></div>
     </div>
     <div id="AlienRear">
-      <div id="Rearball" class="bodyparts"></div>
+      <div id="Rearball"></div>
     
     </div>
     
   </div>
-  <div id="alienbody" class="bodyparts">
+  <div id="alienbody">
     <div id="alienLarm"></div>
     <div id="alienRarm"></div>
     <div id="alienRleg"></div>
@@ -218,8 +198,7 @@ this.setHelpUrl("");
 };
 Blockly.JavaScript['bgenderblock_type'] = function(block) {
  var statements_boy_alien = Blockly.JavaScript.statementToCode(block, 'Boy Alien');
-var code = document.getElementById('Aliengen');
-code.style.visibility = 'visible';
+var code = document.getElementById('Aliengen').style.visibility = 'visible';
 return code;
 };
 
@@ -237,14 +216,36 @@ Blockly.Blocks['blockbodycolour_type'] = {
   }
 };
 Blockly.JavaScript['blockbodycolour_type'] = function(block) {
-  var colour_eye_colour = block.getFieldValue('body_colour');
+  var body_colour_var = block.getFieldValue('body_colour');
   // TODO: Assemble JavaScript into code variable.
-  var code = Blockly.JavaScript.valueToCode(block, 'body_colour',
-    Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
-   code.style.setColour
+  var code =   document.getElementById("AlienHead").style.backgroundColor = body_colour_var;
+    document.getElementById("Learball").style.backgroundColor = body_colour_var;
+    document.getElementById("Rearball").style.backgroundColor = body_colour_var;
+    document.getElementById("alienbody").style.backgroundColor = body_colour_var;
+  return code;
+}
+  //eye colour block
+Blockly.Blocks['eyecolourblock_type'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Eye Colour")
+        .appendField(new Blockly.FieldColour("#ff0000"), "eye_colour");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['eyecolourblock_type'] = function(block) {
+  var colour_eye_colour = block.getFieldValue('eye_colour');
+  // TODO: Assemble JavaScript into code variable.
+  var code =  document.getElementById('REYE').style.backgroundColor= colour_eye_colour;
+  document.getElementById('LEYE').style.backgroundColor= colour_eye_colour;
   return code;
 
 }
+
 
  function runCode() {
    window.LoopTrap = 1000;
@@ -264,7 +265,6 @@ Blockly.JavaScript['blockbodycolour_type'] = function(block) {
     var workspace = Blockly.inject('blocklyDiv',
         {toolbox: document.getElementById('toolbox')});
   </script>
-
 </html>
 
 <!--
