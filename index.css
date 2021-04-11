@@ -20,7 +20,7 @@ body {
      margin-top: 102px;
      border-color: black;
      border-style:solid;
-     position: fixed;
+     position: absolute;
      
      
 
@@ -54,8 +54,8 @@ background-color: black;
     margin: -25x;
     margin-bottom: 500px;
     position:relative;
-    left:-18px;
-    top:80px;
+    left:-20px;
+    top:90px;
     
 }
 #Rearball{
@@ -129,8 +129,8 @@ background-color: black;
     border-color: black;
     border-style:solid;
     position: absolute;
-    right:137px;
-    top: 250px;
+    right:140px;
+    top: 255px;
     z-index: -1;
     
     
