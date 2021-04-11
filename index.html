@@ -34,47 +34,10 @@ Blockly.JavaScript['text_length'] = function(block) {
 
 
 
-//girl block
-Blockly.Blocks['ggenderblock_type'] = {
-  init: function() {
-    this.appendStatementInput("Girl Alien")
-        .setCheck(null)
-        .appendField("Girl Alien");
-    this.setColour(290);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-Blockly.JavaScript['ggenderblock_type'] = function(block) {
-  var statements_girl_alien = Blockly.JavaScript.statementToCode(block, 'Girl Alien');
-  // TODO: Assemble JavaScript into code variable.
-  var code = 
-  alert("bababooey")
-  return code;
-};
 
 
-//Head shape block
-Blockly.Blocks['blockheadshape_type'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Head Shape")
-        .appendField(new Blockly.FieldDropdown([["Round Head","round_headoption"], ["Square Head","square_headoption"], ["Triangle Head","triangle_headoption"]]), "alien_headshape");
-    this.setInputsInline(false);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-Blockly.JavaScript['blockheadshape_type'] = function(block) {
-  var dropdown_alien_headshape = block.getFieldValue('alien_headshape');
-  // TODO: Assemble JavaScript into code variable.
-  var code = Blockly.JavaScript.valueToCode(block, 'alien_headshape',
-    Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
-  return code[code + 'type', Blockly.JavaScript.ORDER_MEMBER];
-};
+
+
 
 //hair block type
 Blockly.Blocks['hairblock_type'] = {
@@ -152,6 +115,7 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
 
 <div id="blocklyDiv" style="height: 500px; width: 50%; float: left;"></div>
 </body>
+<!-- boy Design-->
 <div id="Aliengen" style="height: 500px; width: 450px; float: left; position: relative; z-index: -2;">
  
   <div id="AlienHead">
@@ -181,6 +145,37 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
     <div id="alienLleg"></div>
   </div>
 
+<!-- Girl Design-->
+  <div id="GAliengen" style="height: 500px; width: 450px; float: left; position: relative; z-index: -2;">
+ 
+    <div id="GAlienHead">
+      <img id="Leyelash" src="eyelas.png">
+      <img id="Reyelash" src="eyelas.png">
+     <div id="GLEYE">
+      <div id="Geyeglint"></div>
+     </div>
+     <div id="GREYE">
+       <div id="Geyeglint"></div>
+     </div>
+     <div>
+       <img id="Gsmile" src="lips.png">
+     </div>
+      <div id="GAlienLear">
+        <div id="GLearball"></div>
+      </div>
+      <div id="GAlienRear">
+        <div id="GRearball"></div>
+      
+      </div>
+      
+    </div>
+    <div id="Galienbody">
+      <div id="GalienLarm"></div>
+      <div id="GalienRarm"></div>
+      <div id="GalienRleg"></div>
+      <div id="GalienLleg"></div>
+    </div>
+  
 </div>
 
 <script>
@@ -198,7 +193,15 @@ this.setHelpUrl("");
 };
 Blockly.JavaScript['bgenderblock_type'] = function(block) {
  var statements_boy_alien = Blockly.JavaScript.statementToCode(block, 'Boy Alien');
-var code = document.getElementById('Aliengen').style.visibility = 'visible';
+ function boygender(){
+  document.getElementById('Aliengen').style.visibility = 'visible';
+document.getElementById('GAliengen').style.visibility = 'hidden';
+document.getElementById("GAlienHead").style.backgroundColor = "white";
+    document.getElementById("GLearball").style.backgroundColor = "white";
+    document.getElementById("GRearball").style.backgroundColor = "white";
+    document.getElementById("Galienbody").style.backgroundColor = "white";
+ }
+var code = [] + boygender()
 return code;
 };
 
@@ -218,10 +221,17 @@ Blockly.Blocks['blockbodycolour_type'] = {
 Blockly.JavaScript['blockbodycolour_type'] = function(block) {
   var body_colour_var = block.getFieldValue('body_colour');
   // TODO: Assemble JavaScript into code variable.
-  var code =   document.getElementById("AlienHead").style.backgroundColor = body_colour_var;
+  function bodycolour(){
+    document.getElementById("AlienHead").style.backgroundColor = body_colour_var;
     document.getElementById("Learball").style.backgroundColor = body_colour_var;
     document.getElementById("Rearball").style.backgroundColor = body_colour_var;
     document.getElementById("alienbody").style.backgroundColor = body_colour_var;
+    document.getElementById("GLearball").style.backgroundColor = body_colour_var;
+    document.getElementById("GRearball").style.backgroundColor = body_colour_var;
+    document.getElementById("Galienbody").style.backgroundColor = body_colour_var;
+    document.getElementById("GAlienHead").style.backgroundColor = body_colour_var;
+  }
+  var code = [] + bodycolour()
   return code;
 }
   //eye colour block
@@ -240,12 +250,80 @@ Blockly.Blocks['eyecolourblock_type'] = {
 Blockly.JavaScript['eyecolourblock_type'] = function(block) {
   var colour_eye_colour = block.getFieldValue('eye_colour');
   // TODO: Assemble JavaScript into code variable.
-  var code =  document.getElementById('REYE').style.backgroundColor= colour_eye_colour;
+  function eyecolour(){
+    document.getElementById('REYE').style.backgroundColor= colour_eye_colour;
   document.getElementById('LEYE').style.backgroundColor= colour_eye_colour;
+  document.getElementById('GREYE').style.backgroundColor= colour_eye_colour;
+  document.getElementById('GLEYE').style.backgroundColor= colour_eye_colour;
+  }
+  var code =  [] +eyecolour()
   return code;
 
 }
-
+//girl block
+Blockly.Blocks['ggenderblock_type'] = {
+  init: function() {
+    this.appendStatementInput("Girl Alien")
+        .setCheck(null)
+        .appendField("Girl Alien");
+    this.setColour(290);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['ggenderblock_type'] = function(block) {
+  var statements_girl_alien = Blockly.JavaScript.statementToCode(block, 'Girl Alien');
+  // TODO: Assemble JavaScript into code variable.
+  function girlgender(){
+    document.getElementById('GAliengen').style.visibility = 'visible';
+  document.getElementById('Aliengen').style.visibility = 'hidden';
+  document.getElementById("AlienHead").style.backgroundColor = "white";
+    document.getElementById("Learball").style.backgroundColor = "white";
+    document.getElementById("Rearball").style.backgroundColor = "white";
+    document.getElementById("alienbody").style.backgroundColor = "white";
+  }
+  var code = [] +girlgender()
+  return code;
+};
+//Head shape block
+Blockly.Blocks['blockheadshape_type'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Head Shape")
+        .appendField(new Blockly.FieldDropdown([["Round Head","round_headoption"], ["Square Head","square_headoption"], ["Triangle Head","triangle_headoption"]]), "alien_headshape");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['blockheadshape_type'] = function(block) {
+  var dropdown_alien_headshape = block.getFieldValue('alien_headshape');
+  // TODO: Assemble JavaScript into code variable.
+  function head (){
+    if (dropdown_alien_headshape === "square_headoption"){
+      document.getElementById("AlienHead").style.height="125px";
+      document.getElementById("AlienHead").style.marginLeft="160px";
+      document.getElementById("AlienHead").style.width="125px";
+      document.getElementById("smile").style.marginLeft="-20px";
+      document.getElementById("AlienHead").style.borderRadius ="0%";
+      document.getElementById("AlienLear").style.marginLeft="-39px";
+      document.getElementById("AlienLear").style.marginTop="80px";
+      document.getElementById("AlienRear").style.marginLeft="-39px";
+      document.getElementById("AlienRear").style.marginTop="-250px";
+      document.getElementById("REYE").style.left="0px";
+      document.getElementById("REYE").style.top="70px";
+      document.getElementById("LEYE").style.left="0px";
+      document.getElementById("LEYE").style.top="10px";
+    }else if (dropdown_alien_headshape === "round_headoption"){
+      alert("bababoobies")
+    }
+  }
+  var code = [] + head()
+  return code;
+};
 
  function runCode() {
    window.LoopTrap = 1000;
