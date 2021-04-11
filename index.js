@@ -1,4 +1,3 @@
-
 import Blockly from 'blockly'
  //boy block
  function boyblock(){
@@ -31,4 +30,3 @@ Blockly.JavaScript['bgenderblock_type'] = function(block) {
       }
     }
  }
-
