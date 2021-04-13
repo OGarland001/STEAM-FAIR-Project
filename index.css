@@ -1,359 +1,519 @@
 body {
-    background-color: black;
-  }
-
-
-  #Aliengen{
-      background-color: rgb(255, 255, 255);
-      visibility: hidden;
-  }
-  #AlienHead{
-     height: 100px; 
-     width: 150px;
-     border-radius: 50%;
-     transform: rotate(90deg);
-     display:block;
-     margin-right:25px;
-     margin-left:150px;
-     margin-top: 102px;
-     border-color: black;
-     border-style:solid;
-     position: absolute;
-     
-     
-
-  }
-#AlienLear{
-height: 100px;
-width: 2px;
-margin-left:-25px;
-margin-top:64px;
-transform: rotate(45deg);
-background-color: black;
-
-
-
-}
-#AlienRear{
-    height: 100px;
-    width: 2px;
-    margin-left:-25px;
-    margin-top:-226px;
-    transform: rotate(-45deg);
-    background-color: black;
-    
-}
-#Learball{
-    height: 25px; 
-    width: 40px;
-    border-radius: 50%;
-    border-color: black;
-    border-style: solid;
-    margin: -25x;
-    margin-bottom: 500px;
-    position:relative;
-    left:-20px;
-    top:90px;
-    
-}
-#Rearball{
-    height: 25px; 
-    width: 40px;
-    border-radius: 50%;
-    border-color: black;
-    border-style: solid;
-    margin: -25x;
-    margin-bottom: 500px;
-    position:relative;
-    left:-18px;
-    top:-20px;
-    
-   
-}
-#LEYE{
-    height: 25px; 
-    width: 55px;
-    background-color: #ffff;
-    border-radius: 50%;
-    transform: rotate(180deg);
-    border-color: black;
-    border-style:solid;
-    position: absolute;
-    left:30px;
-    top:10px;
-    
-
-}
-#REYE{
-    height: 25px; 
-    width: 55px;
-    background-color: #ffff;
-    border-radius: 50%;
-    transform: rotate(180deg);
-    border-color: black;
-    border-style:solid;
-    position: absolute;
-    left:30px;
-    top: 61px;
-    
-}
-#eyeglint{
-    height: 5px; 
-    width: 10px;
-    background-color: #ffff;
-    border-radius: 50%;
-    transform: rotate(180deg);
-    border-color: black;
-    border-style:solid;
-    position: absolute;
-    left:35px;
-    top:5px;
-    
-}
-#smile{
-    position:absolute;
-    transform: rotate(270deg);
- height: 50px;
- top:25px;
- left:80px;
- 
-}
-#alienbody{
-    height: 100px; 
-    width: 160px;
-    border-radius: 50%;
-    transform: rotate(90deg);
-    display:block;
-    border-color: black;
-    border-style:solid;
-    position: absolute;
-    right:140px;
-    top: 255px;
-    z-index: -1;
-    
-    
-}
-#alienLarm{
-    width:200px; height:100px;  
-    border:solid 5px #000;
-    border-color:#000 transparent transparent transparent;
-    border-radius: 50%/100px 100px 0 0;
-    position: absolute;
-    top: 28px;
-    transform: rotate(200deg);
-    left: -16px;
-    
-}
-#alienRarm{
-    width:200px; height:100px;  
-    border:solid 5px #000;
-    border-color:#000 transparent transparent transparent;
-    border-radius: 50%/100px 100px 0 0;
-    position: absolute;
-    top: -33px;
-    transform: rotate(-15deg);
-    left: -15px;
-    
-}
-#alienLleg{
-    width:150px; height:100px;  
-    border:solid 5px #000;
-    border-color:#000 transparent transparent transparent;
-    border-radius: 50%/100px 100px 0 0;
-    position: absolute;
-    top: 5px;
-    transform: rotate(180deg);
-    left: 110px;
-    
-}
-
-#alienRleg{
-    width:150px; height:100px;  
-    border:solid 5px #000;
-    border-color:#000 transparent transparent transparent;
-    border-radius: 50%/100px 100px 0 0;
-    position: absolute;
-    top: -25px;
-    transform: rotate(-10deg);
-    left: 110px;
-    
-}
-#GAliengen{
-    background-color: rgb(255, 255, 255);
-    visibility:hidden;
-}
-#GAlienHead{
-   height: 85px; 
-   width: 150px;
-   border-radius: 50%;
-   transform: rotate(90deg);
-   display:block;
-   margin-right:25px;
-   margin-left:150px;
-   margin-top: 102px;
-   border-color: black;
-   border-style:solid;
-   position: absolute;
-   
-   
-
-}
-#GAlienLear{
-height: 80px;
-width: 2px;
-left: -25px;
-top: 50px;
-transform: rotate(45deg);
-background-color: black;
-position: absolute;
-
-
-
-}
-#GAlienRear{
-  height: 80px;
-  width: 2px;
- top:-50px;
- left: -20px;
-  transform: rotate(-45deg);
   background-color: black;
-  position: absolute;
-  
-}
-#GLearball{
-  height: 25px; 
-  width: 40px;
-  border-radius: 50%;
-  border-color: black;
-  border-style: solid;
-  margin: -25x;
-  margin-bottom: 500px;
-  position:relative;
-  left:-15px;
-  top:78px;
-  
-}
-#GRearball{
-  height: 25px; 
-  width: 40px;
-  border-radius: 50%;
-  border-color: black;
-  border-style: solid;
-  margin: -25x;
-  margin-bottom: 500px;
-  position:relative;
-  left:-18px;
-  top:-20px;
-  
- 
-}
-#Leyelash{
-    height: 30px;
-    transform: rotate(-45deg);
-    position: absolute;
-    top: 45px;
-    left: 10px;
-}
-#Reyelash{
-    height: 30px;
-    transform: rotate(215deg);
-    position: absolute;
-    top: 15px;
-    left: 10px;
-}
-#GLEYE{
-  height: 15px; 
-  width: 45px;
-  background-color: #ffff;
-  border-radius: 50%;
-  transform: rotate(210deg);
-  border-color: black;
-  border-style:solid;
-  position: absolute;
-  left:25px;
-  top:12px;
-  
-
-}
-#GREYE{
-  height: 15px; 
-  width: 45px;
-  background-color: #ffff;
-  border-radius: 50%;
-  transform: rotate(150deg);
-  border-color: black;
-  border-style:solid;
-  position: absolute;
-  left:25px;
-  top: 55px;
-  
 }
 
-#Gsmile{
-  position:absolute;
-  transform: rotate(270deg);
-height: 35px;
-top:25px;
-left:75px;
-
+#Aliengen {
+  background-color: rgb(255, 255, 255);
+  visibility: hidden;
 }
-#Galienbody{
-  height: 70px; 
+#AlienHead {
+  height: 100px;
   width: 150px;
   border-radius: 50%;
   transform: rotate(90deg);
-  display:block;
+  display: block;
+  top: 98px;
+  left: 149px;
   border-color: black;
-  border-style:solid;
+  border-style: solid;
   position: absolute;
-  right:140px;
+}
+#AlienLear {
+  height: 100px;
+  width: 2px;
+  margin-left: -25px;
+  margin-top: 64px;
+  transform: rotate(45deg);
+  background-color: black;
+}
+#AlienRear {
+  height: 100px;
+  width: 2px;
+  margin-left: -25px;
+  margin-top: -226px;
+  transform: rotate(-45deg);
+  background-color: black;
+}
+#Learball {
+  height: 25px;
+  width: 40px;
+  border-radius: 50%;
+  border-color: black;
+  border-style: solid;
+  margin: -25x;
+  margin-bottom: 500px;
+  position: relative;
+  left: -20px;
+  top: 90px;
+}
+#Rearball {
+  height: 25px;
+  width: 40px;
+  border-radius: 50%;
+  border-color: black;
+  border-style: solid;
+  margin: -25x;
+  margin-bottom: 500px;
+  position: relative;
+  left: -18px;
+  top: -20px;
+}
+#LEYE {
+  height: 25px;
+  width: 55px;
+  background-color: #ffff;
+  border-radius: 50%;
+  transform: rotate(180deg);
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+  left: 30px;
+  top: 10px;
+}
+#REYE {
+  height: 25px;
+  width: 55px;
+  background-color: #ffff;
+  border-radius: 50%;
+  transform: rotate(180deg);
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+  left: 30px;
+  top: 61px;
+}
+#eyeglint {
+  height: 5px;
+  width: 10px;
+  background-color: #ffff;
+  border-radius: 50%;
+  transform: rotate(180deg);
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+  left: 35px;
+  top: 5px;
+}
+#smile {
+  position: absolute;
+  transform: rotate(270deg);
+  height: 50px;
+  top: 25px;
+  left: 80px;
+}
+#alienbody {
+  height: 100px;
+  width: 160px;
+  border-radius: 50%;
+  transform: rotate(90deg);
+  display: block;
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+  right: 140px;
   top: 255px;
   z-index: -1;
-  
-  
 }
-#GalienLarm{
-  width:200px; height:100px;  
-  border:solid 5px #000;
-  border-color:#000 transparent transparent transparent;
+#alienLarm {
+  width: 200px;
+  height: 100px;
+  border: solid 5px #000;
+  border-color: #000 transparent transparent transparent;
+  border-radius: 50%/100px 100px 0 0;
+  position: absolute;
+  top: 28px;
+  transform: rotate(200deg);
+  left: -16px;
+}
+#alienRarm {
+  width: 200px;
+  height: 100px;
+  border: solid 5px #000;
+  border-color: #000 transparent transparent transparent;
+  border-radius: 50%/100px 100px 0 0;
+  position: absolute;
+  top: -33px;
+  transform: rotate(-15deg);
+  left: -15px;
+}
+#alienLleg {
+  width: 150px;
+  height: 100px;
+  border: solid 5px #000;
+  border-color: #000 transparent transparent transparent;
   border-radius: 50%/100px 100px 0 0;
   position: absolute;
   top: 5px;
-  transform: rotate(200deg);
-  left: -16px;
-  
-}
-#GalienRarm{
-  width:200px; height:100px;  
-  border:solid 5px #000;
-  border-color:#000 transparent transparent transparent;
-  border-radius: 50%/100px 100px 0 0;
-  position: absolute;
-  top: -40px;
-  transform: rotate(-15deg);
-  left: -15px;
-  
-}
-#GalienLleg{
-  width:150px; height:100px;  
-  border:solid 5px #000;
-  border-color:#000 transparent transparent transparent;
-  border-radius: 50%/100px 100px 0 0;
-  position: absolute;
-  top: -25px;
   transform: rotate(180deg);
   left: 110px;
-  
 }
 
-#GalienRleg{
-  width:150px; height:100px;  
-  border:solid 5px #000;
-  border-color:#000 transparent transparent transparent;
+#alienRleg {
+  width: 150px;
+  height: 100px;
+  border: solid 5px #000;
+  border-color: #000 transparent transparent transparent;
   border-radius: 50%/100px 100px 0 0;
   position: absolute;
   top: -25px;
   transform: rotate(-10deg);
   left: 110px;
-  
+}
+#GAliengen {
+  background-color: rgb(255, 255, 255);
+  visibility: hidden;
+}
+#GAlienHead {
+  height: 85px;
+  width: 150px;
+  border-radius: 50%;
+  transform: rotate(90deg);
+  display: block;
+  top: 95px;
+  left: 152px;
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+}
+#GAlienLear {
+  height: 80px;
+  width: 2px;
+  left: -25px;
+  top: 50px;
+  transform: rotate(45deg);
+  background-color: black;
+  position: absolute;
+}
+#GAlienRear {
+  height: 80px;
+  width: 2px;
+  top: -50px;
+  left: -20px;
+  transform: rotate(-45deg);
+  background-color: black;
+  position: absolute;
+}
+#GLearball {
+  height: 25px;
+  width: 40px;
+  border-radius: 50%;
+  border-color: black;
+  border-style: solid;
+  margin: -25x;
+  margin-bottom: 500px;
+  position: relative;
+  left: -15px;
+  top: 78px;
+}
+#GRearball {
+  height: 25px;
+  width: 40px;
+  border-radius: 50%;
+  border-color: black;
+  border-style: solid;
+  margin: -25x;
+  margin-bottom: 500px;
+  position: relative;
+  left: -18px;
+  top: -20px;
+}
+#Leyelash {
+  height: 30px;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 45px;
+  left: 10px;
+}
+#Reyelash {
+  height: 30px;
+  transform: rotate(215deg);
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+#GLEYE {
+  height: 15px;
+  width: 45px;
+  background-color: #ffff;
+  border-radius: 50%;
+  transform: rotate(210deg);
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+  left: 25px;
+  top: 12px;
+}
+#GREYE {
+  height: 15px;
+  width: 45px;
+  background-color: #ffff;
+  border-radius: 50%;
+  transform: rotate(150deg);
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+  left: 25px;
+  top: 55px;
+}
+
+#Gsmile {
+  position: absolute;
+  transform: rotate(270deg);
+  height: 35px;
+  top: 25px;
+  left: 75px;
+}
+#Galienbody {
+  height: 70px;
+  width: 150px;
+  border-radius: 50%;
+  transform: rotate(90deg);
+  display: block;
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+  right: 140px;
+  top: 255px;
+  z-index: -1;
+}
+#GalienLarm {
+  width: 200px;
+  height: 100px;
+  border: solid 5px #000;
+  border-color: #000 transparent transparent transparent;
+  border-radius: 50%/100px 100px 0 0;
+  position: absolute;
+  top: 5px;
+  transform: rotate(200deg);
+  left: -16px;
+}
+#GalienRarm {
+  width: 200px;
+  height: 100px;
+  border: solid 5px #000;
+  border-color: #000 transparent transparent transparent;
+  border-radius: 50%/100px 100px 0 0;
+  position: absolute;
+  top: -40px;
+  transform: rotate(-15deg);
+  left: -15px;
+}
+#GalienLleg {
+  width: 150px;
+  height: 100px;
+  border: solid 5px #000;
+  border-color: #000 transparent transparent transparent;
+  border-radius: 50%/100px 100px 0 0;
+  position: absolute;
+  top: -25px;
+  transform: rotate(180deg);
+  left: 110px;
+}
+
+#GalienRleg {
+  width: 150px;
+  height: 100px;
+  border: solid 5px #000;
+  border-color: #000 transparent transparent transparent;
+  border-radius: 50%/100px 100px 0 0;
+  position: absolute;
+  top: -25px;
+  transform: rotate(-10deg);
+  left: 110px;
+}
+#sqrAlienHead {
+  height: 125px;
+  width: 125px;
+  border-radius: 0%;
+  transform: rotate(90deg);
+  display: block;
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+  visibility: hidden;
+  top: 95px;
+  left: 160px;
+}
+#sqrAlienLear {
+  height: 100px;
+  width: 2px;
+  margin-left: -39px;
+  margin-top: 80px;
+  transform: rotate(45deg);
+  background-color: black;
+}
+#sqrAlienRear {
+  height: 100px;
+  width: 2px;
+  margin-left: -39px;
+  margin-top: -250px;
+  transform: rotate(-45deg);
+  background-color: black;
+}
+#sqrLearball {
+  height: 25px;
+  width: 40px;
+  border-radius: 50%;
+  border-color: black;
+  border-style: solid;
+  margin: -25x;
+  margin-bottom: 500px;
+  position: relative;
+  left: -20px;
+  top: 90px;
+}
+#sqrRearball {
+  height: 25px;
+  width: 40px;
+  border-radius: 50%;
+  border-color: black;
+  border-style: solid;
+  margin: -25x;
+  margin-bottom: 500px;
+  position: relative;
+  left: -18px;
+  top: -20px;
+}
+#sqrLEYE {
+  height: 25px;
+  width: 55px;
+  background-color: #ffff;
+  border-radius: 50%;
+  transform: rotate(180deg);
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+  left: 0px;
+  top: 10px;
+}
+#sqrREYE {
+  height: 25px;
+  width: 55px;
+  background-color: #ffff;
+  border-radius: 50%;
+  transform: rotate(180deg);
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+  left: 0px;
+  top: 80px;
+}
+#sqreyeglint {
+  height: 5px;
+  width: 10px;
+  background-color: #ffff;
+  border-radius: 50%;
+  transform: rotate(180deg);
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+  left: 35px;
+  top: 5px;
+}
+#sqrsmile {
+  position: absolute;
+  transform: rotate(270deg);
+  height: 50px;
+  top: 35px;
+  left: 60px;
+}
+#sqrGAlienHead {
+  height: 100px;
+  width: 100px;
+  border-radius: 0%;
+  transform: rotate(90deg);
+  display: block;
+  top: 95px;
+  left: 152px;
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+}
+#sqrGAlienLear {
+  height: 80px;
+  width: 2px;
+  left: -25px;
+  top: 90px;
+  transform: rotate(45deg);
+  background-color: black;
+  position: absolute;
+}
+#sqrGAlienRear {
+  height: 80px;
+  width: 2px;
+  top: -70px;
+  left: -25px;
+  transform: rotate(-45deg);
+  background-color: black;
+  position: absolute;
+}
+#sqrGLearball {
+  height: 25px;
+  width: 40px;
+  border-radius: 50%;
+  border-color: black;
+  border-style: solid;
+  margin: -25x;
+  margin-bottom: 500px;
+  position: relative;
+  left: -15px;
+  top: 78px;
+}
+#sqrGRearball {
+  height: 25px;
+  width: 40px;
+  border-radius: 50%;
+  border-color: black;
+  border-style: solid;
+  margin: -25x;
+  margin-bottom: 500px;
+  position: relative;
+  left: -18px;
+  top: -20px;
+}
+#sqrLeyelash {
+  height: 30px;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 55px;
+  left: 15px;
+}
+#sqrReyelash {
+  height: 30px;
+  transform: rotate(215deg);
+  position: absolute;
+  top: 12px;
+  left: 15px;
+}
+#sqrGLEYE {
+  height: 15px;
+  width: 45px;
+  background-color: #ffff;
+  border-radius: 50%;
+  transform: rotate(210deg);
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+  left: 0px;
+  top: 12px;
+}
+#sqrGREYE {
+  height: 15px;
+  width: 45px;
+  background-color: #ffff;
+  border-radius: 50%;
+  transform: rotate(150deg);
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+  left: 0px;
+  top: 65px;
+}
+
+#sqrGsmile {
+  position: absolute;
+  transform: rotate(270deg);
+  height: 35px;
+  top: 30px;
+  left: 75px;
 }
