@@ -5,6 +5,7 @@ body {
 #Aliengen {
   background-color: rgb(255, 255, 255);
   visibility: hidden;
+  z-index: 50;
 }
 #AlienHead {
   height: 100px;
@@ -17,6 +18,7 @@ body {
   border-color: black;
   border-style: solid;
   position: absolute;
+  z-index: 50;
 }
 #AlienLear {
   height: 100px;
@@ -112,7 +114,7 @@ body {
   position: absolute;
   right: 140px;
   top: 255px;
-  z-index: -1;
+  z-index: 50;
 }
 #alienLarm {
   width: 200px;
@@ -162,6 +164,8 @@ body {
 #GAliengen {
   background-color: rgb(255, 255, 255);
   visibility: hidden;
+  left:720px;
+  z-index: -50;
 }
 #GAlienHead {
   height: 85px;
@@ -274,18 +278,19 @@ body {
   position: absolute;
   right: 140px;
   top: 255px;
-  z-index: -1;
+  z-index: -50;
 }
 #GalienLarm {
   width: 200px;
   height: 100px;
-  border: solid 5px #000;
+  border: solid 5px blue;
   border-color: #000 transparent transparent transparent;
   border-radius: 50%/100px 100px 0 0;
   position: absolute;
   top: 5px;
   transform: rotate(200deg);
   left: -16px;
+  
 }
 #GalienRarm {
   width: 200px;
@@ -333,6 +338,7 @@ body {
   visibility: hidden;
   top: 95px;
   left: 160px;
+  z-index: 50;
 }
 #sqrAlienLear {
   height: 100px;
@@ -428,6 +434,7 @@ body {
   border-color: black;
   border-style: solid;
   position: absolute;
+  z-index: 50;
 }
 #sqrGAlienLear {
   height: 80px;
