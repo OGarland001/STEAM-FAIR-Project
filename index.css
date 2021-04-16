@@ -429,12 +429,12 @@ body {
   border-radius: 0%;
   transform: rotate(90deg);
   display: block;
-  top: 95px;
-  left: 152px;
+  top: 115px;
+  left: 180px;
   border-color: black;
   border-style: solid;
   position: absolute;
-  z-index: 50;
+  z-index: -50;
 }
 #sqrGAlienLear {
   height: 80px;
@@ -483,14 +483,14 @@ body {
   transform: rotate(-45deg);
   position: absolute;
   top: 55px;
-  left: 15px;
+  left: -15px;
 }
 #sqrReyelash {
   height: 30px;
   transform: rotate(215deg);
   position: absolute;
   top: 12px;
-  left: 15px;
+  left: -15px;
 }
 #sqrGLEYE {
   height: 15px;
@@ -522,5 +522,5 @@ body {
   transform: rotate(270deg);
   height: 35px;
   top: 30px;
-  left: 75px;
+  left: 45px;
 }
