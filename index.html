@@ -87,9 +87,9 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
 
 <div id="blocklyDiv" style="height: 500px; width: 50%; float: left;"></div>
 
+
 <!-- boy Design-->
 <div id="Aliengen" style="height: 500px; width: 450px; float: left; position: relative;">
-  <!-- Round Head Boy -->
   <div id="AlienHead">
     
    <div id="LEYE">
@@ -108,7 +108,6 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
       <div id="Rearball"></div>
     
     </div>
-    
   </div>
   <div id="alienbody">
     <div id="alienLarm"></div>
@@ -116,38 +115,37 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
     <div id="alienRleg"></div>
     <div id="alienLleg"></div>
   </div>
-<!-- Square Head Boy-->
-  <div id="sqrAlienHead">
+      
+  <div id="TAlienHead">
     
-    <div id="sqrLEYE">
-     <div id="sqreyeglint"></div>
+    <div id="TLEYE">
+     <div id="Teyeglint"></div>
     </div>
-    <div id="sqrREYE">
-      <div id="sqreyeglint"></div>
+    <div id="TREYE">
+      <div id="Teyeglint"></div>
     </div>
     <div>
-      <img id="sqrsmile" src="unnamed.png">
+      <img id="Tsmile" src="unnamed.png">
     </div>
-     <div id="sqrAlienLear">
-       <div id="sqrLearball"></div>
+     <div id="TAlienLear">
+       <div id="TLearball"></div>
      </div>
-     <div id="sqrAlienRear">
-       <div id="sqrRearball"></div>
+     <div id="TAlienRear">
+       <div id="TRearball"></div>
      
      </div>
-    </div>
-  </div>
+</div>
+
 <!-- Girl Design-->
-  <div id="GAliengen" style="height: 500px; width: 450px; float: left; position: absolute;">
+  <div id="GAliengen" style="height: 500px; width: 450px; position: absolute; z-index: 2;">
  
     <div id="GAlienHead">
       <img id="Leyelash" src="eyelas.png">
       <img id="Reyelash" src="eyelas.png">
      <div id="GLEYE">
-      <div id="Geyeglint"></div>
+      
      </div>
      <div id="GREYE">
-       <div id="Geyeglint"></div>
      </div>
      <div>
        <img id="Gsmile" src="lips.png">
@@ -159,6 +157,7 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
         <div id="GRearball"></div>
       
       </div>
+      
     </div>
     <div id="Galienbody">
       <div id="GalienLarm"></div>
@@ -166,28 +165,28 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
       <div id="GalienRleg"></div>
       <div id="GalienLleg"></div>
     </div>
-    <!-- Square Head Girl -->
-    <div id="sqrGAlienHead">
-      <img id="sqrLeyelash" src="eyelas.png">
-      <img id="sqrReyelash" src="eyelas.png">
-     <div id="sqrGLEYE">
-      <div id="sqrGeyeglint"></div>
-     </div>
-     <div id="sqrGREYE">
-       <div id="sqrGeyeglint"></div>
-     </div>
-     <div>
-       <img id="sqrGsmile" src="lips.png">
-     </div>
-      <div id="sqrGAlienLear">
-        <div id="sqrGLearball"></div>
+
+    <div id="TGAlienHead">
+      <img id="TLeyelash" src="eyelas.png">
+      <img id="TReyelash" src="eyelas.png">
+      <div id="TGLEYE">
+       <div id="TGeyeglint"></div>
       </div>
-      <div id="sqrGAlienRear">
-        <div id="sqrGRearball"></div>
-      
+      <div id="TGREYE">
+        <div id="TGeyeglint"></div>
       </div>
-     </div>
-    </div>
+      <div>
+        <img id="TGsmile" src="lips.png">
+      </div>
+       <div id="TGAlienLear">
+         <div id="TGLearball"></div>
+       </div>
+       <div id="TGAlienRear">
+         <div id="TGRearball"></div>
+       
+       </div>
+  </div>
+
 </body>
 <script>
 //boy block
@@ -204,7 +203,6 @@ this.setHelpUrl("");
 };
 Blockly.JavaScript['bgenderblock_type'] = function(block) {
  var statements_boy_alien = Blockly.JavaScript.statementToCode(block, 'Boy Alien');
- let x = 5;
  function boygender(){
   document.getElementById('Aliengen').style.visibility = 'visible';
 document.getElementById('GAliengen').style.visibility = 'hidden';
@@ -212,14 +210,11 @@ document.getElementById("GAlienHead").style.backgroundColor = "white";
     document.getElementById("GLearball").style.backgroundColor = "white";
     document.getElementById("GRearball").style.backgroundColor = "white";
     document.getElementById("Galienbody").style.backgroundColor = "white";
-    document.getElementById("GLearball").style.backgroundColor = body_colour_var;
-    document.getElementById("sqrAlienHead").style.visibility = "hidden";
-    document.getElementById("Galienbody").style.visibility = "hidden";
-
+    document.getElementById("GAlienHead").style.top = "-1000px";
+    document.getElementById("AlienHead").style.top = "98px";
  }
 var code = [] + boygender()
 return code;
-return x;
 };
 
 // Body Colour Block
@@ -238,7 +233,6 @@ Blockly.Blocks['blockbodycolour_type'] = {
 Blockly.JavaScript['blockbodycolour_type'] = function(block) {
   var body_colour_var = block.getFieldValue('body_colour');
   // TODO: Assemble JavaScript into code variable.
-  
   function bodycolour(){
     document.getElementById("AlienHead").style.backgroundColor = body_colour_var;
     document.getElementById("Learball").style.backgroundColor = body_colour_var;
@@ -248,11 +242,13 @@ Blockly.JavaScript['blockbodycolour_type'] = function(block) {
     document.getElementById("GRearball").style.backgroundColor = body_colour_var;
     document.getElementById("Galienbody").style.backgroundColor = body_colour_var;
     document.getElementById("GAlienHead").style.backgroundColor = body_colour_var;
-    document.getElementById("sqrLearball").style.backgroundColor = body_colour_var;
-    document.getElementById("sqrRearball").style.backgroundColor = body_colour_var;
-    document.getElementById("sqrAlienHead").style.backgroundColor = body_colour_var;
-    
-
+    document.getElementById("TAlienHead").style.backgroundColor = "transparent";
+    document.getElementById("TLearball").style.backgroundColor = body_colour_var;
+    document.getElementById("TRearball").style.backgroundColor = body_colour_var;
+    document.getElementById("TAlienHead").style.borderRightColor =body_colour_var;
+    document.getElementById("TGLearball").style.backgroundColor = body_colour_var;
+    document.getElementById("TGRearball").style.backgroundColor = body_colour_var;
+    document.getElementById("TGAlienHead").style.borderRightColor =body_colour_var;
   }
   var code = [] + bodycolour()
   return code;
@@ -274,13 +270,15 @@ Blockly.JavaScript['eyecolourblock_type'] = function(block) {
   var colour_eye_colour = block.getFieldValue('eye_colour');
   // TODO: Assemble JavaScript into code variable.
   function eyecolour(){
-    document.getElementById('REYE').style.backgroundColor= colour_eye_colour;
-  document.getElementById('LEYE').style.backgroundColor= colour_eye_colour;
-  document.getElementById('GREYE').style.backgroundColor= colour_eye_colour;
-  document.getElementById('GLEYE').style.backgroundColor= colour_eye_colour;
-  document.getElementById('sqrREYE').style.backgroundColor= colour_eye_colour;
-  document.getElementById('sqrLEYE').style.backgroundColor= colour_eye_colour;
-}
+    document.getElementById("REYE").style.backgroundColor= colour_eye_colour;
+  document.getElementById("LEYE").style.backgroundColor= colour_eye_colour;
+  document.getElementById("GREYE").style.backgroundColor= colour_eye_colour;
+  document.getElementById("GLEYE").style.backgroundColor= colour_eye_colour;
+  document.getElementById("TREYE").style.backgroundColor = colour_eye_colour;
+  document.getElementById("TLEYE").style.backgroundColor = colour_eye_colour;
+  document.getElementById("TGREYE").style.backgroundColor = colour_eye_colour;
+  document.getElementById("TGLEYE").style.backgroundColor = colour_eye_colour;
+  }
   var code =  [] +eyecolour()
   return code;
 
@@ -301,16 +299,16 @@ Blockly.JavaScript['ggenderblock_type'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   function girlgender(){
     document.getElementById('GAliengen').style.visibility = 'visible';
-    document.getElementById('Galienbody').style.visibility = 'visible';
   document.getElementById('Aliengen').style.visibility = 'hidden';
   document.getElementById("AlienHead").style.backgroundColor = "white";
     document.getElementById("Learball").style.backgroundColor = "white";
     document.getElementById("Rearball").style.backgroundColor = "white";
     document.getElementById("alienbody").style.backgroundColor = "white";
-    document.getElementById("sqrAlienHead").style.visibility = "hidden";
-    document.getElementById("sqrGAlienHead").style.visibility = "visible";
+    document.getElementById("TAlienHead").style.visibility = "hidden";
+    document.getElementById("AlienHead").style.top = "-1000px";
+    document.getElementById("GAlienHead").style.top = "95px";
   }
-  var code = [] + girlgender()
+  var code = [] +girlgender()
   return code;
 };
 //Head shape block
@@ -332,35 +330,91 @@ Blockly.JavaScript['blockheadshape_type'] = function(block) {
   var dropdown_alien_headshape = block.getFieldValue('alien_headshape');
   // TODO: Assemble JavaScript into code variable.
   function head (){
-      if (dropdown_alien_headshape === "square_headoption"){
-      document.getElementById("sqrAlienHead").style.visibility = "visible";
-     document.getElementById("AlienHead").style.visibility = "hidden";
-          document.getElementById("sqrGAlienHead").style.visibility = "visible";
-          document.getElementById("GAlienHead").style.visibility="hidden";
-          
-        
-    }else if (dropdown_alien_headshape === "round_headoption"){
-      document.getElementById("sqrAlienHead").style.visibility = "hidden";
-     document.getElementById("AlienHead").style.visibility = "visible";
-          document.getElementById("sqrGAlienHead").style.visibility = "hidden";
-          document.getElementById("GAlienHead").style.visibility="visible";
+    if (dropdown_alien_headshape === "square_headoption"){
 
-    }else if (dropdown_alien_headshape === "triangle_headoption"){
-      document.getElementById("AlienHead").style.height = "0px"
+      document.getElementById("AlienHead").style.height="125px";
+      document.getElementById("AlienHead").style.left="160px";
+      document.getElementById("AlienHead").style.top="95px";
+      document.getElementById("AlienHead").style.width="125px";
+      document.getElementById("smile").style.left="60px";
+      document.getElementById("smile").style.top="35px";
       document.getElementById("AlienHead").style.borderRadius ="0%";
-      document.getElementById("AlienHead").style.width = "0px"
-      document.getElementById("AlienHead").style.rotate = "0deg"
-      document.getElementById("AlienHead").style.borderTop =" 60px transparent";
-      document.getElementById("AlienHead").style.borderBottom = "60px";
-      document.getElementById("AlienHead").style.borderRight ="60px transparent";
-      document.getElementById("AlienHead").style.borderLeft = "60px transparent";
-      document.getElementById("AlienHead").style.borderStyle = "solid";
-      document.getElementById("AlienHead").style.position = "absolute";
-      document.getElementById("AlienHead").style.left = "55px";
-      
-
-      
-  }
+      document.getElementById("AlienLear").style.marginLeft="-39px";
+      document.getElementById("AlienLear").style.marginTop="80px";
+      document.getElementById("AlienRear").style.marginLeft="-39px";
+      document.getElementById("AlienRear").style.marginTop="-250px";
+      document.getElementById("REYE").style.left="0px";
+      document.getElementById("REYE").style.top="70px";
+      document.getElementById("LEYE").style.left="0px";
+      document.getElementById("LEYE").style.top="10px";
+      document.getElementById("GAlienHead").style.height="125px";
+      document.getElementById("GAlienHead").style.width="125px"; 
+      document.getElementById("GAlienHead").style.borderRadius ="0%";
+      document.getElementById("GAlienHead").style.top="100px";
+      document.getElementById("GAlienHead").style.left="160px"; 
+      document.getElementById("GAlienLear").style.top="90px";
+      document.getElementById("GAlienLear").style.left="-25px";
+      document.getElementById("GAlienRear").style.top="-70px";
+      document.getElementById("GAlienRear").style.left="-25px"; 
+      document.getElementById("Leyelash").style.top="73px";
+      document.getElementById("Leyelash").style.left="-15px";
+      document.getElementById("Reyelash").style.top="18px";
+      document.getElementById("Reyelash").style.left="-15px";
+      document.getElementById("Gsmile").style.top="40px";
+      document.getElementById("Gsmile").style.left="45px";
+      document.getElementById("GREYE").style.left="0px";
+      document.getElementById("GREYE").style.top="80px";
+      document.getElementById("GLEYE").style.left="0px";
+      document.getElementById("GLEYE").style.top="20px";
+      document.getElementById("AlienHead").style.visibility = "visible";
+      document.getElementById("GAlienHead").style.visibility = "visible";
+      document.getElementById("TAlienHead").style.visibility = "hidden";
+      document.getElementById("TGAlienHead").style.visibility = "hidden";
+    }else if (dropdown_alien_headshape === "round_headoption"){
+      document.getElementById("GAlienHead").style.height = "85px"
+      document.getElementById("GAlienHead").style.borderRadius ="50%";
+      document.getElementById("GAlienHead").style.width = "150px"
+      document.getElementById("GAlienHead").style.top="95px";
+      document.getElementById("GAlienHead").style.left="153px"; 
+      document.getElementById("GAlienLear").style.left = "-25px"
+      document.getElementById("GAlienLear").style.top = "50px";
+      document.getElementById("GAlienRear").style.top = "-50px";
+      document.getElementById("GAlienRear").style.left = "-20px";
+      document.getElementById("GLEYE").style.top = "12px"
+      document.getElementById("GLEYE").style.left = "25px"
+      document.getElementById("GREYE").style.top = "55px"
+      document.getElementById("GREYE").style.left = "25px"
+      document.getElementById("Leyelash").style.left ="10px";
+      document.getElementById("Leyelash").style.top ="45px";
+      document.getElementById("Reyelash").style.top ="15px";
+      document.getElementById("Reyelash").style.left ="10px";
+      document.getElementById("Gsmile").style.left ="75px";
+      document.getElementById("Gsmile").style.top ="25px";
+      document.getElementById("AlienHead").style.height = "100px"
+      document.getElementById("AlienHead").style.borderRadius ="50%";
+      document.getElementById("AlienHead").style.width = "150px"
+      document.getElementById("AlienHead").style.top="98px";
+      document.getElementById("AlienHead").style.left="149px"; 
+      document.getElementById("AlienLear").style.marginLeft = "-25px";
+      document.getElementById("AlienLear").style.marginTop = "64px";
+      document.getElementById("AlienRear").style.marginTop = "-226px";
+      document.getElementById("AlienRear").style.marginLeft = "-25px";
+      document.getElementById("LEYE").style.top = "10px";
+      document.getElementById("LEYE").style.left = "30px";
+      document.getElementById("REYE").style.top = "61px";
+      document.getElementById("REYE").style.left = "30px";
+      document.getElementById("smile").style.left ="80px";
+      document.getElementById("smile").style.top ="25px";
+      document.getElementById("AlienHead").style.visibility = "visible";
+      document.getElementById("GAlienHead").style.visibility = "visible";
+      document.getElementById("TAlienHead").style.visibility = "hidden";
+      document.getElementById("TGAlienHead").style.visibility = "hidden";
+    }else if (dropdown_alien_headshape === "triangle_headoption"){      
+      document.getElementById("TAlienHead").style.visibility = "visible";
+      document.getElementById("AlienHead").style.visibility = "hidden";
+      document.getElementById("TGAlienHead").style.visibility = "visible";
+      document.getElementById("GAlienHead").style.visibility = "hidden";
+    }
   }
   var code = [] + head()
   return code;
