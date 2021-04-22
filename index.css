@@ -164,7 +164,6 @@ body {
 #GAliengen {
   background-color: rgb(255, 255, 255);
   visibility: hidden;
-  left:720px;
   z-index: -50;
 }
 #GAlienHead {
@@ -178,6 +177,7 @@ body {
   border-color: black;
   border-style: solid;
   position: absolute;
+  z-index: -50;
 }
 #GAlienLear {
   height: 80px;
@@ -290,7 +290,6 @@ body {
   top: 5px;
   transform: rotate(200deg);
   left: -16px;
-  
 }
 #GalienRarm {
   width: 200px;
@@ -326,37 +325,41 @@ body {
   transform: rotate(-10deg);
   left: 110px;
 }
-#sqrAlienHead {
-  height: 125px;
-  width: 125px;
+#TAlienHead {
+  height: 0;
+  width: 0;
   border-radius: 0%;
   transform: rotate(90deg);
   display: block;
-  border-color: black;
-  border-style: solid;
+  top: -25px;
+  left: 65px;
+  border-left: 111px solid transparent;
+  border-right: 225px solid black;
+  border-top: 111px solid transparent;
+  border-bottom: 111px solid transparent;
   position: absolute;
-  visibility: hidden;
-  top: 95px;
-  left: 160px;
   z-index: 50;
+  visibility: hidden;
 }
-#sqrAlienLear {
+#TAlienLear {
   height: 100px;
   width: 2px;
-  margin-left: -39px;
-  margin-top: 80px;
+  left: 30px;
+  top: 0px;
   transform: rotate(45deg);
+  position: absolute;
   background-color: black;
 }
-#sqrAlienRear {
+#TAlienRear {
   height: 100px;
   width: 2px;
-  margin-left: -39px;
-  margin-top: -250px;
+  left: 30px;
+  top: -100px;
   transform: rotate(-45deg);
   background-color: black;
+  position: absolute;
 }
-#sqrLearball {
+#TLearball {
   height: 25px;
   width: 40px;
   border-radius: 50%;
@@ -368,7 +371,7 @@ body {
   left: -20px;
   top: 90px;
 }
-#sqrRearball {
+#TRearball {
   height: 25px;
   width: 40px;
   border-radius: 50%;
@@ -380,7 +383,8 @@ body {
   left: -18px;
   top: -20px;
 }
-#sqrLEYE {
+
+#TLEYE {
   height: 25px;
   width: 55px;
   background-color: #ffff;
@@ -389,10 +393,10 @@ body {
   border-color: black;
   border-style: solid;
   position: absolute;
-  left: 0px;
+  left: 75px;
   top: 10px;
 }
-#sqrREYE {
+#TREYE {
   height: 25px;
   width: 55px;
   background-color: #ffff;
@@ -401,10 +405,10 @@ body {
   border-color: black;
   border-style: solid;
   position: absolute;
-  left: 0px;
-  top: 80px;
+  left: 75px;
+  top: -40px;
 }
-#sqreyeglint {
+#Teyeglint {
   height: 5px;
   width: 10px;
   background-color: #ffff;
@@ -416,45 +420,48 @@ body {
   left: 35px;
   top: 5px;
 }
-#sqrsmile {
+#Tsmile {
   position: absolute;
   transform: rotate(270deg);
   height: 50px;
-  top: 35px;
-  left: 60px;
+  top: -25px;
+  left: 145px;
 }
-#sqrGAlienHead {
-  height: 100px;
-  width: 100px;
+#TGAlienHead {
+  height: 0;
+  width: 0;
   border-radius: 0%;
   transform: rotate(90deg);
   display: block;
-  top: 115px;
-  left: 180px;
-  border-color: black;
-  border-style: solid;
+  top: -25px;
+  left: 65px;
+  border-left: 111px solid transparent;
+  border-right: 225px solid black;
+  border-top: 111px solid transparent;
+  border-bottom: 111px solid transparent;
   position: absolute;
-  z-index: -50;
+  z-index: 50;
+  visibility: hidden;
 }
-#sqrGAlienLear {
-  height: 80px;
+#TGAlienLear {
+  height: 100px;
   width: 2px;
-  left: -25px;
-  top: 90px;
+  left: 30px;
+  top: 0px;
   transform: rotate(45deg);
-  background-color: black;
   position: absolute;
+  background-color: black;
 }
-#sqrGAlienRear {
-  height: 80px;
+#TGAlienRear {
+  height: 100px;
   width: 2px;
-  top: -70px;
-  left: -25px;
+  left: 30px;
+  top: -100px;
   transform: rotate(-45deg);
   background-color: black;
   position: absolute;
 }
-#sqrGLearball {
+#TGLearball {
   height: 25px;
   width: 40px;
   border-radius: 50%;
@@ -463,10 +470,10 @@ body {
   margin: -25x;
   margin-bottom: 500px;
   position: relative;
-  left: -15px;
-  top: 78px;
+  left: -20px;
+  top: 90px;
 }
-#sqrGRearball {
+#TGRearball {
   height: 25px;
   width: 40px;
   border-radius: 50%;
@@ -478,49 +485,64 @@ body {
   left: -18px;
   top: -20px;
 }
-#sqrLeyelash {
+#TLeyelash {
   height: 30px;
-  transform: rotate(-45deg);
+  transform: rotate(-30deg);
   position: absolute;
-  top: 55px;
-  left: -15px;
+  top: px;
+  left: 60px;
+  z-index: 55;
 }
-#sqrReyelash {
+#TReyelash {
   height: 30px;
-  transform: rotate(215deg);
-  position: absolute;
-  top: 12px;
-  left: -15px;
-}
-#sqrGLEYE {
-  height: 15px;
-  width: 45px;
-  background-color: #ffff;
-  border-radius: 50%;
   transform: rotate(210deg);
-  border-color: black;
-  border-style: solid;
   position: absolute;
-  left: 0px;
-  top: 12px;
+  top: -28px;
+  left: 58px;
+  z-index: 55;
 }
-#sqrGREYE {
-  height: 15px;
-  width: 45px;
+#TGLEYE {
+  height: 25px;
+  width: 55px;
   background-color: #ffff;
   border-radius: 50%;
-  transform: rotate(150deg);
+  transform: rotate(180deg);
   border-color: black;
   border-style: solid;
   position: absolute;
-  left: 0px;
-  top: 65px;
+  left: 75px;
+  top: 10px;
+  z-index: 51;
 }
-
-#sqrGsmile {
+#TGREYE {
+  height: 25px;
+  width: 55px;
+  background-color: #ffff;
+  border-radius: 50%;
+  transform: rotate(180deg);
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+  left: 75px;
+  top: -40px;
+  z-index: 51;
+}
+#TGeyeglint {
+  height: 5px;
+  width: 10px;
+  background-color: #ffff;
+  border-radius: 50%;
+  transform: rotate(180deg);
+  border-color: black;
+  border-style: solid;
+  position: absolute;
+  left: 35px;
+  top: 5px;
+}
+#TGsmile {
   position: absolute;
   transform: rotate(270deg);
-  height: 35px;
-  top: 30px;
-  left: 45px;
+  height: 50px;
+  top: -25px;
+  left: 145px;
 }
