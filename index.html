@@ -10,53 +10,7 @@
     <script src="custom_generator.js"></script>
     <link rel="stylesheet" href="index.css">
 
-    <script>
-//hair block type
-Blockly.Blocks['hairblock_type'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Hair Style")
-        .appendField(new Blockly.FieldDropdown([["Crazy","crazy_style"], ["Long","long_style"], ["Short","short_style"]]), "Hair_Style")
-        .appendField("Hair Colour")
-        .appendField(new Blockly.FieldColour("#ff0000"), "hair_colour");
-    this.setPreviousStatement(true, null);  
-    this.setNextStatement(true, null);
-    this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-Blockly.JavaScript['hairblock_type'] = function(block) {
-  var dropdown_hair_style = block.getFieldValue('Hair_Style');
-  var colour_hair_colour = block.getFieldValue('hair_colour');
-  // TODO: Assemble JavaScript into code variable.
-  var code = Blockly.JavaScript.valueToCode(block, 'Hair_Style',"hair_colour",
-    Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
-  return code[code + 'type', Blockly.JavaScript.ORDER_MEMBER];
-};
-//Shoe Block
-Blockly.Blocks['shoeblock_type'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Shoes")
-        .appendField(new Blockly.FieldDropdown([["Sandals","Sandals_shoe"], ["Running Shoes","running_shoe"], ["Boots","boots_shoe"]]), "shoeoption_block");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(345);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-Blockly.JavaScript['shoeblock_type'] = function(block) {
-  var dropdown_shoeoption_block = block.getFieldValue('shoeoption_block');
-  // TODO: Assemble JavaScript into code variable.
-  var code = Blockly.JavaScript.valueToCode(block, 'shoeoption_block',
-    Blockly.JavaScript.ORDER_FUNCTION_CALL)||'\'\'';
-  return code[code + 'type', Blockly.JavaScript.ORDER_MEMBER];
-};
-
-
-  </script>
+ 
    
    
 </head>
@@ -72,13 +26,9 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
     <category name="Head">
       <block type="blockheadshape_type"></block>
       <block type="eyecolourblock_type"></block>
-      <block type="hairblock_type"></block>
+      <block type="hatblock_type"></block>
     </category>
-    <category name="Feet">
-      <block type="shoeblock_type"></block>
-  
    
-    </category>
   
 </xml> 
 <button onclick="runCode()">Run JavaScript</button>
@@ -86,10 +36,16 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
 <body>
 
 <div id="blocklyDiv" style="height: 500px; width: 50%; float: left;"></div>
-
+<img id="cb_style" src="Images/cb_style.png" style="position: absolute;">
+<img id="th_style" src="Images/th_style.png" style="position: absolute;">
+<img id="Ash_style" src="Images/Ash_style (2).png" style="position: absolute;">
+<img id="jm_style" src="Images/jm_style.png" style="position: absolute;">
+<img id="pcb_style" src="Images/pcb_style.png" style="position: absolute;">
+<img id="Sant_style" src="Images/santa-hat-png-10272.png" style="position: absolute;">
 
 <!-- boy Design-->
 <div id="Aliengen" style="height: 500px; width: 450px; float: left; position: relative;">
+  
   <div id="AlienHead">
     
    <div id="LEYE">
@@ -99,7 +55,7 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
      <div id="eyeglint"></div>
    </div>
    <div>
-     <img id="smile" src="unnamed.png">
+     <img id="smile" src="images/unnamed.png">
    </div>
     <div id="AlienLear">
       <div id="Learball"></div>
@@ -125,7 +81,7 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
       <div id="Teyeglint"></div>
     </div>
     <div>
-      <img id="Tsmile" src="unnamed.png">
+      <img id="Tsmile" src="images/unnamed.png">
     </div>
      <div id="TAlienLear">
        <div id="TLearball"></div>
@@ -138,17 +94,17 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
 
 <!-- Girl Design-->
   <div id="GAliengen" style="height: 500px; width: 450px; position: absolute; z-index: 2;">
- 
+     
     <div id="GAlienHead">
-      <img id="Leyelash" src="eyelas.png">
-      <img id="Reyelash" src="eyelas.png">
+      <img id="Leyelash" src="images/eyelas.png">
+      <img id="Reyelash" src="images/eyelas.png">
      <div id="GLEYE">
       
      </div>
      <div id="GREYE">
      </div>
      <div>
-       <img id="Gsmile" src="lips.png">
+       <img id="Gsmile" src="images/lips.png">
      </div>
       <div id="GAlienLear">
         <div id="GLearball"></div>
@@ -167,8 +123,8 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
     </div>
 
     <div id="TGAlienHead">
-      <img id="TLeyelash" src="eyelas.png">
-      <img id="TReyelash" src="eyelas.png">
+      <img id="TLeyelash" src="images/eyelas.png">
+      <img id="TReyelash" src="images/eyelas.png">
       <div id="TGLEYE">
        <div id="TGeyeglint"></div>
       </div>
@@ -176,7 +132,7 @@ Blockly.JavaScript['shoeblock_type'] = function(block) {
         <div id="TGeyeglint"></div>
       </div>
       <div>
-        <img id="TGsmile" src="lips.png">
+        <img id="TGsmile" src="images/lips.png">
       </div>
        <div id="TGAlienLear">
          <div id="TGLearball"></div>
@@ -419,6 +375,73 @@ Blockly.JavaScript['blockheadshape_type'] = function(block) {
   var code = [] + head()
   return code;
 };
+//hair block type
+Blockly.Blocks['hatblock_type'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Hat Type")
+        .appendField(new Blockly.FieldDropdown([["Cow Boy","cb_style"], ["Top Hat","th_style"], ["Ash","ash_style"], ["Jump Man", "jm_style"], ["Pink Cow Boy", "pcb_style"], ["Festive", "sant_style"]]), "Hat_Style")
+    this.setPreviousStatement(true, null);  
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['hatblock_type'] = function(block) {
+  var dropdown_hat_style = block.getFieldValue('Hat_Style');
+  // TODO: Assemble JavaScript into code variable.
+  function hat(){
+    if(dropdown_hat_style === "cb_style"){
+      document.getElementById("cb_style").style.visibility = "visible";
+      document.getElementById("th_style").style.visibility = "hidden";
+      document.getElementById("pcb_style").style.visibility = "hidden";
+      document.getElementById("jm_style").style.visibility = "hidden";
+      document.getElementById("Ash_style").style.visibility = "hidden";
+      document.getElementById("Sant_style").style.visibility = "hidden";
+    }else if (dropdown_hat_style === "th_style"){
+      document.getElementById("cb_style").style.visibility = "hidden";
+      document.getElementById("th_style").style.visibility = "visible";
+      document.getElementById("pcb_style").style.visibility = "hidden";
+      document.getElementById("jm_style").style.visibility = "hidden";
+      document.getElementById("Ash_style").style.visibility = "hidden";
+      document.getElementById("Sant_style").style.visibility = "hidden";
+    }else if(dropdown_hat_style === "pcb_style"){
+      document.getElementById("cb_style").style.visibility = "hidden";
+      document.getElementById("th_style").style.visibility = "hidden";
+      document.getElementById("pcb_style").style.visibility = "visible";
+      document.getElementById("jm_style").style.visibility = "hidden";
+      document.getElementById("Ash_style").style.visibility = "hidden";
+      document.getElementById("Sant_style").style.visibility = "hidden";
+    }else if(dropdown_hat_style === "jm_style"){
+      document.getElementById("cb_style").style.visibility = "hidden";
+      document.getElementById("th_style").style.visibility = "hidden";
+      document.getElementById("pcb_style").style.visibility = "hidden";
+      document.getElementById("jm_style").style.visibility = "visible";
+      document.getElementById("Ash_style").style.visibility = "hidden";
+      document.getElementById("Sant_style").style.visibility = "hidden";
+    }else if(dropdown_hat_style === "ash_style"){
+      document.getElementById("cb_style").style.visibility = "hidden";
+      document.getElementById("th_style").style.visibility = "hidden";
+      document.getElementById("pcb_style").style.visibility = "hidden";
+      document.getElementById("jm_style").style.visibility = "hidden";
+      document.getElementById("Ash_style").style.visibility = "visible";
+      document.getElementById("Sant_style").style.visibility = "hidden";
+    }else if(dropdown_hat_style === "sant_style"){
+      document.getElementById("cb_style").style.visibility = "hidden";
+      document.getElementById("th_style").style.visibility = "hidden";
+      document.getElementById("pcb_style").style.visibility = "hidden";
+      document.getElementById("jm_style").style.visibility = "hidden";
+      document.getElementById("Ash_style").style.visibility = "hidden";
+      document.getElementById("Sant_style").style.visibility = "visible";
+    }
+  }
+  var code = [] + hat()
+  return code;
+};
+
+
+
  function runCode() {
    window.LoopTrap = 1000;
      Blockly.JavaScript.INFINITE_LOOP_TRAP =
@@ -439,26 +462,3 @@ Blockly.JavaScript['blockheadshape_type'] = function(block) {
         {toolbox: document.getElementById('toolbox')});
   </script>
 </html>
-
-<!--
-    //Body type block
-    Blockly.Blocks['bodyblock_type'] = {
-      init: function() {
-        this.appendStatementInput("STRING")
-        .setCheck(null)
-        .appendField("Body Shape")
-        .appendField(new Blockly.FieldDropdown([["Small","sm_body"], ["Medium","sm_body"], ["Large","sm_body"]]), "body_shapes");
-    this.setColour(135);
- this.setTooltip("");
- this.setHelpUrl("");
- Blockly.JavaScript['bodyblock_type'] = function(block) {
-  var dropdown_body_shapes = block.getFieldValue('body_shapes');
-  var statements_string = Blockly.JavaScript.statementToCode(block, 'STRING');
-  // TODO: Assemble JavaScript into code variable.
-  var code = Blockly.JavaScript.valueToCode(block, 'STRING',
-        Blockly.JavaScript.ORDER_FUNCTION_CALL)|| '\'\'';
-  return [code +'type', Blockly.JavaScript.ORDER_MEMBER];
-};
-  }
-};
--->
