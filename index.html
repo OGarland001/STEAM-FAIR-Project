@@ -32,6 +32,8 @@
   
 </xml> 
 <button onclick="runCode()">Run JavaScript</button>
+<input onclick = "lrnMode()" type="checkbox" id="checkbox">
+<label for="checkbox">Learn Mode</label>
 </header>
 <body>
 
@@ -452,6 +454,12 @@ Blockly.JavaScript['hatblock_type'] = function(block) {
        eval(code);
      } catch (e) {
        
+     }
+   }
+   function lrnMode(){
+     if(document.getElementById("checkbox").checked = true){
+      check = 0;
+      
      }
    }
 
