@@ -37,14 +37,22 @@
 
 
   </xml>
+  <div id="secretMode">
+    <form>
+      <label for="secretMode"> Secret...</label><br>
+      <input type="text" id="secretpet" name="secretpet"></br>
+      <input type="submit">
+    </form>
+  </div>
   <button onclick="runCode()">Run JavaScript</button>
+
 </header>
 
 <body>
 
   <div id="blocklyDiv" style="height: 500px; width: 50%; float: left;"></div>
 
-  
+
   <!-- boy Design-->
   <div id="Aliengen" style="height: 500px; width: 450px; float: left; position: relative;">
     <div id="hatDiv" style="height:500px; width: 450px; position: absolute;">
@@ -385,7 +393,7 @@
     var code = [] + head()
     return code;
   };
-  //hair block type
+  //hat block type
   Blockly.Blocks['hatblock_type'] = {
     init: function () {
       this.appendDummyInput()
@@ -463,10 +471,16 @@
     } catch (e) {
 
     }
-
+    document.getElementById("secretMode").style.visibility = "visible";
   }
- 
-  
+  function secretMode() {
+    if (secretpet = "boobs") {
+      alert("bababoobies");
+    } else if (secretpet = "butt") {
+      alert("balls");
+    }
+  }
+
 
 
 </script>
