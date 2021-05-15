@@ -38,11 +38,11 @@
 
   </xml>
   <div id="secretMode">
-    <form>
-      <label for="secretMode"> Secret...</label><br>
-      <input type="text" id="secretpet" name="secretpet"></br>
-      <input type="submit">
-    </form>
+
+    <label> Secret...</label><br>
+    <input type="text" id="secretpet"></br>
+    <input type="submit" onclick="secretMode()">
+
   </div>
   <button onclick="runCode()">Run JavaScript</button>
 
@@ -55,6 +55,8 @@
 
   <!-- boy Design-->
   <div id="Aliengen" style="height: 500px; width: 450px; float: left; position: relative;">
+    <div id="s"></div>
+
     <div id="hatDiv" style="height:500px; width: 450px; position: absolute;">
       <img id="cb_style" src="Images/cb_style.png" style="position: absolute;">
       <img id="th_style" src="Images/th_style.png" style="position: absolute;">
@@ -111,7 +113,7 @@
 
     <!-- Girl Design-->
     <div id="GAliengen" style="height: 500px; width: 450px; position: absolute; z-index: 2;">
-
+      <div id="s"></div>
       <div id="GAlienHead">
         <img id="Leyelash" src="images/eyelas.png">
         <img id="Reyelash" src="images/eyelas.png">
@@ -159,6 +161,7 @@
 
         </div>
       </div>
+
 
 </body>
 <script>
@@ -474,12 +477,15 @@
     document.getElementById("secretMode").style.visibility = "visible";
   }
   function secretMode() {
-    if (secretpet = "boobs") {
-      alert("bababoobies");
-    } else if (secretpet = "butt") {
-      alert("balls");
+    var Userval = document.getElementById("secretpet").value;
+    if (Userval = "AFSCATdfsfssfds") {
+      document.getElementById("Aliengen").style.backgroundImage = "url('http://tympanus.net/codrops-playground/assets/images/cssref/properties/min-width/kitten.jpeg')";
+    }
+    if (Userval = "dskjfsdk323e432DRag") {
+      document.getElementById("Aliengen").style.backgroundImage = "url('https://www.hellobio.com/media/magpleasure/mpblog/upload/7/1/71c8a1aa9c37e9912187a2e7846dd52b.jpg')";
     }
   }
+
 
 
 
