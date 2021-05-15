@@ -678,3 +678,10 @@ body {
     display: block;
   }
 }
+
+#s {
+  height: 250px;
+  width: 200px;
+  position: absolute;
+  top: 250px;
+}
